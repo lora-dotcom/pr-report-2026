@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晋升考核报告 · 媒体公关</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --jsaux: #5B3FA8;
+    --jsaux-light: #EDE8FA;
+    --jsaux-mid: #9B85D8;
+    --aecooly: #2A7D5F;
+    --aecooly-light: #E4F5EE;
+    --aecooly-mid: #6BBFA0;
+    --neutral: #1A1A2E;
+    --neutral-2: #4A4A6A;
+    --neutral-3: #8888AA;
+    --bg: #F8F7FC;
+    --white: #FFFFFF;
+    --border: rgba(90,60,168,0.10);
+    --gold: #C9962A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--neutral);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--neutral);
+    color: white;
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(91,63,168,0.25);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(42,125,95,0.20);
+  }
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--jsaux-mid);
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-title span { color: var(--jsaux-mid); font-style: italic; }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    position: relative; z-index: 1;
+  }
+  .hero-badges {
+    display: flex; gap: 10px; margin-top: 28px;
+    position: relative; z-index: 1;
+    flex-wrap: wrap;
+  }
+  .hero-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge-jsaux { background: rgba(91,63,168,0.35); color: var(--jsaux-mid); }
+  .badge-aecooly { background: rgba(42,125,95,0.35); color: var(--aecooly-mid); }
+  .badge-neutral { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.65); }
+
+  /* LAYOUT */
+  .page { max-width: 1100px; margin: 0 auto; padding: 80px 40px 80px; }
+
+  .section { margin-bottom: 52px; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neutral-3);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* METRIC CARDS */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .metrics-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+  }
+  .metric-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px 22px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+  }
+  .metric-card.jsaux::before { background: var(--jsaux); }
+  .metric-card.aecooly::before { background: var(--aecooly); }
+  .metric-card.gold::before { background: var(--gold); }
+  .metric-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-card.jsaux .metric-num { color: var(--jsaux); }
+  .metric-card.aecooly .metric-num { color: var(--aecooly); }
+  .metric-card.gold .metric-num { color: var(--gold); }
+  .metric-unit {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--neutral-3);
+    margin-left: 2px;
+  }
+  .metric-label {
+    font-size: 12px;
+    color: var(--neutral-3);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .metric-sub {
+    font-size: 11px;
+    color: var(--neutral-3);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* PROJECT CARDS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .project-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .project-card.featured {
+    grid-column: 1 / -1;
+    background: var(--neutral);
+    color: white;
+    border-color: transparent;
+  }
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+  .project-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-jsaux { background: var(--jsaux-light); color: var(--jsaux); }
+  .tag-aecooly { background: var(--aecooly-light); color: var(--aecooly); }
+  .tag-featured { background: rgba(91,63,168,0.3); color: var(--jsaux-mid); }
+  .tag-summer { background: rgba(201,150,42,0.2); color: var(--gold); }
+  .tag-japan { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+  .project-status {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .status-done { background: var(--aecooly-light); color: var(--aecooly); }
+  .status-progress { background: #FFF8E8; color: var(--gold); }
+  .project-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .project-card.featured .project-title { color: white; }
+  .project-desc {
+    font-size: 13px;
+    color: var(--neutral-2);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .project-card.featured .project-desc { color: rgba(255,255,255,0.6); }
+
+  /* PM01S MATRIX */
+  .matrix {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .matrix-tier {
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .matrix-tier.t1 { background: rgba(91,63,168,0.15); border: 1px solid rgba(91,63,168,0.25); }
+  .matrix-tier.t2 { background: rgba(42,125,95,0.12); border: 1px solid rgba(42,125,95,0.22); }
+  .matrix-tier.t3 { background: rgba(201,150,42,0.12); border: 1px solid rgba(201,150,42,0.22); }
+  .tier-name {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .matrix-tier.t1 .tier-name { color: var(--jsaux-mid); }
+  .matrix-tier.t2 .tier-name { color: var(--aecooly-mid); }
+  .matrix-tier.t3 .tier-name { color: var(--gold); }
+  .tier-count {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: white;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tier-desc { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .tier-media { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 6px; font-style: italic; }
+
+  /* STATS ROW IN PROJECT */
+  .project-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .pstat { text-align: center; }
+  .pstat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--jsaux);
+    line-height: 1;
+  }
+  .pstat-label { font-size: 10px; color: var(--neutral-3); margin-top: 2px; }
+
+  /* JAPAN CHANNELS */
+  .japan-channels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .jchannel {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  .jchannel-type {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .jchannel-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-top: 16px;
+  }
+  .timeline-track {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 0;
+    position: relative;
+  }
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--jsaux-light), var(--jsaux), var(--aecooly), var(--aecooly-light));
+    z-index: 0;
+  }
+  .tmonth {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .tmonth-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+    border: 2px solid;
+  }
+  .tmonth:nth-child(1) .tmonth-dot { background: var(--jsaux-light); border-color: var(--jsaux); color: var(--jsaux); }
+  .tmonth:nth-child(2) .tmonth-dot { background: var(--jsaux-light); border-color: var(--jsaux); color: var(--jsaux); }
+  .tmonth:nth-child(3) .tmonth-dot { background: var(--aecooly-light); border-color: var(--aecooly); color: var(--aecooly); }
+  .tmonth:nth-child(4) .tmonth-dot { background: var(--aecooly-light); border-color: var(--aecooly); color: var(--aecooly); }
+  .tmonth-phase {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    color: var(--neutral-3);
+  }
+  .tmonth-items {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .titem {
+    font-size: 12px;
+    color: var(--neutral-2);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+  }
+  .titem:last-child { border-bottom: none; }
+  .titem::before { content: '·  '; color: var(--neutral-3); }
+
+  /* CAPABILITIES */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+  }
+  .cap-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+  .cap-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .cap-icon.p { background: var(--jsaux-light); }
+  .cap-icon.g { background: var(--aecooly-light); }
+  .cap-icon.y { background: #FFF8E8; }
+  .cap-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--neutral); }
+  .cap-desc { font-size: 12px; color: var(--neutral-2); line-height: 1.6; }
+
+  /* ASSESSMENT */
+  .assess-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .assess-row {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+  }
+  .assess-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .assess-name { font-size: 13px; font-weight: 500; color: var(--neutral); }
+  .assess-stars { font-size: 12px; color: var(--gold); letter-spacing: 2px; }
+  .assess-bar-bg {
+    height: 5px;
+    background: var(--bg);
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .assess-bar-fill { height: 5px; border-radius: 3px; transition: width 1s ease; }
+  .assess-evidence { font-size: 11px; color: var(--neutral-3); }
+
+  /* OUTLOOK */
+  .outlook-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+  }
+  .outlook-card {
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid;
+  }
+  .outlook-card.near { background: var(--jsaux-light); border-color: rgba(91,63,168,0.2); }
+  .outlook-card.mid { background: #FFF8E8; border-color: rgba(201,150,42,0.2); }
+  .outlook-card.cont { background: var(--aecooly-light); border-color: rgba(42,125,95,0.2); }
+  .outlook-period {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    margin-bottom: 8px;
+  }
+  .outlook-card.near .outlook-period { color: var(--jsaux); }
+  .outlook-card.mid .outlook-period { color: var(--gold); }
+  .outlook-card.cont .outlook-period { color: var(--aecooly); }
+  .outlook-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--neutral); }
+  .outlook-desc { font-size: 12px; color: var(--neutral-2); line-height: 1.6; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--neutral);
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+  }
+  .footer-brands { display: flex; gap: 20px; }
+  .fbrand { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .fbrand-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 36px 24px 32px; }
+    .hero-title { font-size: 28px; }
+    .page { padding: 32px 20px 60px; }
+    .metrics-grid, .metrics-grid-2, .projects-grid, .matrix,
+    .cap-grid, .assess-grid, .outlook-grid, .japan-channels,
+    .timeline-track { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: auto; }
+    .timeline-track::before { display: none; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+  }
+</style>
+</head>
+<body><div style="position:fixed;top:12px;right:12px;z-index:9999;background:#2A7D5F;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-family:sans-serif;">👁 只读模式</div>
+
+
+
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag" style="outline:none;cursor:text;">晋升考核报告 · 2026</div>
+  <div class="hero-title" style="outline:none;cursor:text;">媒体公关助理 <span>→</span> 媒体公关专员</div>
+  <div class="hero-sub" style="outline:none;cursor:text;">市场部 · 市场沟通组 &nbsp;|&nbsp; 考核周期 3/1 – 4/30</div>
+  <div class="hero-badges">
+    <div class="hero-badge badge-jsaux" style="outline:none;cursor:text;">JSAUX 品牌</div>
+    <div class="hero-badge badge-aecooly" style="outline:none;cursor:text;">Aecooly 品牌</div>
+    <div class="hero-badge badge-neutral" style="outline:none;cursor:text;">双品牌全链路 PR</div>
+    <div class="hero-badge badge-neutral" style="outline:none;cursor:text;">7 个重点项目并行</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- CORE METRICS -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">核心成果</div>
+    <div class="metrics-grid">
+      <div class="metric-card aecooly">
+        <div class="metric-num" style="outline:none;cursor:text;">61<span class="metric-unit">家</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">Aecooly 媒体资源总量</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">去年约20家 → 今年净增41家</div>
+      </div>
+      <div class="metric-card jsaux">
+        <div class="metric-num" style="outline:none;cursor:text;">83.3<span class="metric-unit">%</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">PC0123 内容回收率</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">12家送测 · 10篇产出</div>
+      </div>
+      <div class="metric-card gold">
+        <div class="metric-num" style="outline:none;cursor:text;">12<span class="metric-unit">家</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">PM01S 目标媒体矩阵</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">含 8 家百万级权威媒体</div>
+      </div>
+      <div class="metric-card jsaux">
+        <div class="metric-num" style="outline:none;cursor:text;">7<span class="metric-unit">个</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">重点项目同期推进</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">多线并行执行</div>
+      </div>
+    </div>
+    <div class="metrics-grid-2">
+      <div class="metric-card aecooly">
+        <div class="metric-num" style="outline:none;cursor:text;">8<span class="metric-unit">篇</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">双品牌独立 Blog 产出</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">+ 多渠道新闻稿持续发布</div>
+      </div>
+      <div class="metric-card aecooly">
+        <div class="metric-num" style="outline:none;cursor:text;">3<span class="metric-unit">家</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">日本市场主动建联</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">实体杂志 + 数字媒体 + 播客</div>
+      </div>
+      <div class="metric-card jsaux">
+        <div class="metric-num" style="outline:none;cursor:text;">4<span class="metric-unit">款</span></div>
+        <div class="metric-label" style="outline:none;cursor:text;">JSAUX 新品评测并行</div>
+        <div class="metric-sub" style="outline:none;cursor:text;">均已确认媒体并完成寄样</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">重点项目执行</div>
+    <div class="projects-grid">
+
+      <!-- PM01S FEATURED -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <div>
+            <div class="project-tag tag-featured">Aecooly · 核心项目</div>
+            <div class="project-title" style="margin-top:10px;">PM01S 新品上市传播矩阵</div>
+          </div>
+          <div class="project-status status-progress">5月上架冲刺中</div>
+        </div>
+        <div class="project-desc" style="outline:none;cursor:text;">目标于5月中旬产品上架时实现声量最大化，建立品类认知壁垒。系统搭建12家目标媒体资源，采用三层分级布局，与运营团队同步确认上架节点，确保媒体声量与电商爆发期精准对齐。</div>
+        <div class="matrix">
+          <div class="matrix-tier t1">
+            <div class="tier-name" style="outline:none;cursor:text;">权威背书层</div>
+            <div class="tier-count" style="outline:none;cursor:text;">8</div>
+            <div class="tier-desc" style="outline:none;cursor:text;">百万级媒体，覆盖北美与西欧主流消费科技及健康垂类</div>
+            <div class="tier-media" style="outline:none;cursor:text;"><a href="https://www.nytimes.com/wirecutter/" style="color:#9B85D8;text-decoration:none;" target="_blank">Wirecutter</a> · <a href="https://www.wired.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">WIRED</a> · <a href="https://www.theverge.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">The Verge</a> · <a href="https://www.prevention.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Prevention</a> · <a href="https://www.slashgear.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Slash Gear</a> · <a href="https://www.numerama.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Numerama</a> · <a href="https://www.journaldugeek.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Journal du Geek</a> · <a href="https://www.everydayhealth.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Everyday Health</a></div>
+          </div>
+          <div class="matrix-tier t2">
+            <div class="tier-name" style="outline:none;cursor:text;">竞品卡位层</div>
+            <div class="tier-count" style="outline:none;cursor:text;">3</div>
+            <div class="tier-desc" style="outline:none;cursor:text;">从戴森评测媒体逆向挖掘，洽谈横评对比内容，建立高性能替代认知</div>
+            <div class="tier-media" style="outline:none;cursor:text;"><a href="https://www.hardwarezone.com.sg/" style="color:#9B85D8;text-decoration:none;" target="_blank">HardwareZone</a> · <a href="https://www.techlicious.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Techlicious</a> · <a href="https://www.gadgetmatch.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">GadgetMatch</a></div>
+          </div>
+          <div class="matrix-tier t3">
+            <div class="tier-name" style="outline:none;cursor:text;">设计背书层</div>
+            <div class="tier-count" style="outline:none;cursor:text;">1</div>
+            <div class="tier-desc" style="outline:none;cursor:text;">强化产品设计语言的专业认可度</div>
+            <div class="tier-media" style="outline:none;cursor:text;"><a href="https://www.yankodesign.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Yanko Design</a> · 约稿推进中</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PC0123 -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-tag tag-jsaux">JSAUX · 已完成</div>
+          <div class="project-status status-done">回收率 83.3%</div>
+        </div>
+        <div class="project-title" style="outline:none;cursor:text;">PC0123 评测项目</div>
+        <div class="project-desc" style="outline:none;cursor:text;">12家媒体送测，通过标准化Press Kit + 主动追踪 + 备选媒体机制，实现83.3%内容回收率，覆盖北美与欧洲多国媒体资源。</div>
+        <div class="project-stats">
+          <div class="pstat">
+            <div class="pstat-num" style="outline:none;cursor:text;">12</div>
+            <div class="pstat-label" style="outline:none;cursor:text;">送测媒体</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num" style="outline:none;cursor:text;">10</div>
+            <div class="pstat-label" style="outline:none;cursor:text;">内容产出</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num" style="outline:none;cursor:text;">5</div>
+            <div class="pstat-label" style="outline:none;cursor:text;">覆盖国家</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 多新品 -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-tag tag-jsaux">JSAUX · 进行中</div>
+          <div class="project-status status-progress">寄样跟进中</div>
+        </div>
+        <div class="project-title" style="outline:none;cursor:text;">多新品评测项目</div>
+        <div class="project-desc" style="outline:none;cursor:text;">PC0132、HB0704、GP0512、HB0503 四款新品同步推进，各项目均已确认目标评测媒体并完成寄样。PC0132含两家百万级媒体资源（<a href="https://gam3s.gg/" style="color:#9B85D8;text-decoration:none;" target="_blank">gam3s.gg</a>、<a href="https://www.purexbox.com/" style="color:#9B85D8;text-decoration:none;" target="_blank">Pure Xbox</a>）。</div>
+        <div class="project-stats">
+          <div class="pstat">
+            <div class="pstat-num" style="color:var(--jsaux)">4</div>
+            <div class="pstat-label" style="outline:none;cursor:text;">并行产品线</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-num" style="color:var(--jsaux)">2</div>
+            <div class="pstat-label" style="outline:none;cursor:text;">百万级媒体</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 世界杯 -->
+      <div class="project-card" style="border-color:rgba(201,150,42,0.2);background:#FFFDF5;">
+        <div class="project-header">
+          <div class="project-tag tag-summer">夏季重点项目</div>
+          <div class="project-status status-progress">前置储备中</div>
+        </div>
+        <div class="project-title" style="outline:none;cursor:text;">世界杯营销节点媒体布局</div>
+        <div class="project-desc" style="outline:none;cursor:text;">夏季全年重点营销节点，现阶段主动建联体育、足球垂类媒体，同步部署外部供应商扩充资源池。目标5月中旬前锁定主要合作媒体，确保项目启动时资源即刻可用。</div>
+      </div>
+
+      <!-- 日本 -->
+      <div class="project-card" style="background:var(--neutral);border-color:transparent;grid-column:1/-1;">
+        <div class="project-header">
+          <div>
+            <div class="project-tag tag-japan">Aecooly · 日本市场</div>
+            <div class="project-title" style="color:white;margin-top:10px;">日本市场多形态渠道建联</div>
+          </div>
+          <div class="project-status" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">PR TIMES 按周发稿</div>
+        </div>
+        <div class="project-desc" style="outline:none;cursor:text;">在PR TIMES稳定发稿基础上，主动建联三种不同形态的日本媒体，实现渠道差异化布局，触达线下、数字、音频三个受众触点。</div>
+        <div class="japan-channels">
+          <div class="jchannel">
+            <div class="jchannel-type" style="outline:none;cursor:text;">实体杂志</div>
+            <div class="jchannel-name" style="outline:none;cursor:text;">懸賞なび<br><span style="font-size:11px;color:rgba(255,255,255,0.4);">5月22日刊 · 日本唯一悬赏专门杂志 · 线下消费场景</span></div>
+          </div>
+          <div class="jchannel">
+            <div class="jchannel-type" style="outline:none;cursor:text;">女性数字媒体</div>
+            <div class="jchannel-name" style="outline:none;cursor:text;">カワコレメディア<br><span style="font-size:11px;color:rgba(255,255,255,0.4);">女性向生活方式媒体 · 受众与品牌调性契合 · 评测合作中</span></div>
+          </div>
+          <div class="jchannel">
+            <div class="jchannel-type" style="outline:none;cursor:text;">音频播客</div>
+            <div class="jchannel-name" style="outline:none;cursor:text;">社長！あなたの会社教えてください<br><span style="font-size:11px;color:rgba(255,255,255,0.4);">企业访谈类节目 · Spotify发布 · 品牌故事维度曝光</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">执行时间轴</div>
+    <div class="timeline">
+      <div class="timeline-track">
+        <div class="tmonth">
+          <div class="tmonth-dot">1月</div>
+          <div class="tmonth-phase" style="outline:none;cursor:text;">执行收尾</div>
+          <div class="tmonth-items">
+            <div class="titem" style="outline:none;cursor:text;">PC0123 媒体内容产出</div>
+            <div class="titem" style="outline:none;cursor:text;">日常新闻稿发布</div>
+            <div class="titem" style="outline:none;cursor:text;">Foodpanda 东南亚合作模式探索</div>
+            <div class="titem" style="outline:none;cursor:text;">Aecooly 媒体资源建联启动</div>
+          </div>
+        </div>
+        <div class="tmonth">
+          <div class="tmonth-dot">2月</div>
+          <div class="tmonth-phase" style="outline:none;cursor:text;">策略规划</div>
+          <div class="tmonth-items">
+            <div class="titem" style="outline:none;cursor:text;">PM01S 媒体矩阵规划启动</div>
+            <div class="titem" style="outline:none;cursor:text;">Aecooly 资源建联提速</div>
+            <div class="titem" style="outline:none;cursor:text;">竞品媒体逆向挖掘研究</div>
+          </div>
+        </div>
+        <div class="tmonth">
+          <div class="tmonth-dot">3月</div>
+          <div class="tmonth-phase" style="outline:none;cursor:text;">全面推进</div>
+          <div class="tmonth-items">
+            <div class="titem" style="outline:none;cursor:text;">四款新品寄样跟进</div>
+            <div class="titem" style="outline:none;cursor:text;">PR TIMES 日文稿启动（4月共发布4篇）</div>
+            <div class="titem" style="outline:none;cursor:text;">iF 设计奖新闻稿发布</div>
+            <div class="titem" style="outline:none;cursor:text;">日本媒体主动建联</div>
+            <div class="titem" style="outline:none;cursor:text;">Aecooly Blog 集中产出</div>
+          </div>
+        </div>
+        <div class="tmonth">
+          <div class="tmonth-dot">4月</div>
+          <div class="tmonth-phase" style="outline:none;cursor:text;">冲刺备战</div>
+          <div class="tmonth-items">
+            <div class="titem" style="outline:none;cursor:text;">PM01S 核心媒体洽谈推进</div>
+            <div class="titem" style="outline:none;cursor:text;">世界杯媒体前置储备</div>
+            <div class="titem" style="outline:none;cursor:text;">美通社 / EIN 新闻稿执行</div>
+            <div class="titem" style="outline:none;cursor:text;">JSAUX Blog 配合上架节奏</div>
+            <div class="titem" style="outline:none;cursor:text;">Qwoted 平台媒体跟进</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPABILITIES -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">能力沉淀</div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-icon p">🎯</div>
+        <div class="cap-title" style="outline:none;cursor:text;">媒体资源开发与分级管理</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">建立清晰的媒体筛选标准——回复效率高、持续产出意愿强、配合多渠道传播。形成以竞品媒体逆向挖掘为核心的资源拓展路径，精准定位具备品类认知基础的合作资源。</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon p">🤖</div>
+        <div class="cap-title" style="outline:none;cursor:text;">AI 工具驱动的媒体研究方法论</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">以竞品为锚点调用 AI 批量抓取评测媒体报道，输出结构化名单；结合地区维度定向筛选，供应商负责联系方式获取，内部把控核心资源洽谈，压缩从目标锁定到触达的时间成本。</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon g">📦</div>
+        <div class="cap-title" style="outline:none;cursor:text;">Press Kit 标准化（Aecooly）</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">建立包含白底图、场景图、主视觉及规格说明的标准化物料体系，有效降低陌生媒体的合作摩擦，提升初次建联回复率，加速资源从接触到确认的转化周期。</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon g">📅</div>
+        <div class="cap-title" style="outline:none;cursor:text;">新品发布前置媒体锁定机制</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">形成新品上市前约半个月启动评测媒体确认的标准动作，结合运营团队上架节奏同步推进，确保媒体声量与产品发布窗口精准匹配，避免上市期声量滞后。</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon y">🔗</div>
+        <div class="cap-title" style="outline:none;cursor:text;">外部资源调配</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">以明确方向和筛选标准驱动供应商执行，提升资源开拓效率与准确率；核心资源洽谈由内部把控，内外协同并行，兼顾覆盖广度与合作质量。</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon y">✍️</div>
+        <div class="cap-title" style="outline:none;cursor:text;">内容独立生产能力</div>
+        <div class="cap-desc" style="outline:none;cursor:text;">独立承担双品牌 Blog 撰写及多渠道新闻稿发布，覆盖美通社、EIN、PR TIMES 及西班牙供应商渠道，能从产品卖点提炼到媒体语言转化全程独立完成。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">考核维度完成情况</div>
+    <div class="assess-grid">
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">工作熟悉度与流程管理</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:90%;background:var(--jsaux);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">熟悉PR Agency及内部合作流程，具备独立发稿与内容生产能力</div>
+      </div>
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">项目执行与进度管理</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:100%;background:var(--jsaux);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">7个重点项目并行推进，独立规划PM01S媒体投放方向及分层策略</div>
+      </div>
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">资源管理与拓展</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:95%;background:var(--aecooly);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">净增41家媒体资源，全部项目目标媒体均超出"至少3家"要求</div>
+      </div>
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">问题解决与应变能力</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:85%;background:var(--aecooly);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">PC0123回收率83.3%，建立备选媒体机制对冲单点风险</div>
+      </div>
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">创新与主动性</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:88%;background:var(--gold);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">竞品逆向挖掘策略、AI方法论、日本市场多形态布局、夏季节点前置储备</div>
+      </div>
+      <div class="assess-row">
+        <div class="assess-top">
+          <div class="assess-name" style="outline:none;cursor:text;">沟通与协作能力</div>
+          <div class="assess-stars" style="outline:none;cursor:text;">★★★</div>
+        </div>
+        <div class="assess-bar-bg"><div class="assess-bar-fill" style="width:85%;background:var(--jsaux);"></div></div>
+        <div class="assess-evidence" style="outline:none;cursor:text;">跨部门协同运营/产品团队；PR Agency及供应商高效协作；Qwoted平台接手</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTLOOK -->
+  <div class="section">
+    <div class="section-label" style="outline:none;cursor:text;">未来展望</div>
+    <div class="outlook-grid">
+      <div class="outlook-card near">
+        <div class="outlook-period" style="outline:none;cursor:text;">短期 · 5月</div>
+        <div class="outlook-title" style="outline:none;cursor:text;">PM01S 上架声量冲刺</div>
+        <div class="outlook-desc" style="outline:none;cursor:text;">推动已锁定12家媒体资源在上架节点集中产出，实现上市期声量最大化，与电商爆发期精准对齐。</div>
+      </div>
+      <div class="outlook-card mid">
+        <div class="outlook-period" style="outline:none;cursor:text;">夏季 · 5–7月</div>
+        <div class="outlook-title" style="outline:none;cursor:text;">世界杯项目落地执行</div>
+        <div class="outlook-desc" style="outline:none;cursor:text;">将前置储备的体育媒体资源转化为实际合作，确保双品牌在夏季营销窗口期持续曝光。</div>
+      </div>
+      <div class="outlook-card cont">
+        <div class="outlook-period" style="outline:none;cursor:text;">持续方向</div>
+        <div class="outlook-title" style="outline:none;cursor:text;">资源库沉淀 · 内容节奏 · AI工具深化</div>
+        <div class="outlook-desc" style="outline:none;cursor:text;">完善双品牌媒体分级体系；推动Aecooly品牌Blog实现每周稳定更新；持续深化AI工具在竞品研究、媒体挖掘、对比报告输出等环节的应用，提升整体PR执行效率。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>市场部 · 市场沟通组 &nbsp;·&nbsp; 考核周期 2026/3/1 – 2026/4/30</div>
+  <div class="footer-brands">
+    <div class="fbrand"><div class="fbrand-dot" style="background:var(--jsaux);"></div>JSAUX</div>
+    <div class="fbrand"><div class="fbrand-dot" style="background:var(--aecooly);"></div>Aecooly</div>
+  </div>
+</div>
+
+
+
+
+
+
+</body></html>
